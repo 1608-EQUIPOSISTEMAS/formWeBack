@@ -207,6 +207,6 @@ app.post('/inscripcion', async (req, reply) => {
 /* =========================
  * Server
  * ========================= */
-app.listen({ port: Number(PORT), host: '127.0.0.1' }).then(addr => {
+app.listen({ port: Number(PORT), host: '0.0.0.0' }).then(addr => {
   app.log.info(`Server listening at ${addr}`)
 })

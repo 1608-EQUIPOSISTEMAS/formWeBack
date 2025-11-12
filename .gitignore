@@ -1,0 +1,64 @@
+# ===============================
+# 📦 Node.js / Fastify backend
+# ===============================
+
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Entornos
+.env
+.env.*.local
+*.env.local
+
+# Compilados / builds
+dist/
+build/
+coverage/
+.cache/
+.tmp/
+.eslintcache
+
+# Archivos temporales / del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log
+*.pid
+*.seed
+*.tgz
+*.bak
+
+# IDE / editor config
+.idea/
+.vscode/
+*.code-workspace
+
+# Docker y PM2
+docker-compose.override.yml
+.docker/
+pm2.log
+logs/
+*.pid
+*.pid.lock
+
+# Uploads o archivos generados en runtime
+uploads/
+temp/
+tmp/
+sessions/
+cache/
+
+# Tests
+coverage/
+.jest/
+.mocha/
+.nyc_output/
+
+# OS-specific
+ehthumbs.db
+Icon?
+Desktop.ini
