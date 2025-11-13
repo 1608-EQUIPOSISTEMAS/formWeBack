@@ -33,7 +33,7 @@ const {
   GCS_BUCKET,
   GOOGLE_SHEET_ID,
   PORT = 3000,
-  PUBLIC_BASE_URL = 'http://38.242.140.200:3000'
+  PUBLIC_BASE_URL = 'https://we-educacion-ejecutiva.site/api'
 } = process.env
 
 app.log.info({ GCP_PROJECT_ID, GCS_BUCKET, GOOGLE_SHEET_ID, CRED_PATH: GOOGLE_APPLICATION_CREDENTIALS })
@@ -80,7 +80,7 @@ const safe = (v) => (v === null || v === undefined ? '' : v)
  * ========================= */
 const ALLOWED_MIME = new Set(['image/jpeg','image/png','image/webp','image/heic'])
 
-app.post('/upload/sign', async (req, reply) => {
+app.post('/api/upload/sign', async (req, reply) => {
   try {
     const { contentType, side } = req.body || {}
     if (!contentType || !side) return reply.code(400).send({ error: 'contentType y side requeridos' })
@@ -113,7 +113,7 @@ app.post('/upload/sign', async (req, reply) => {
 /* =========================
  * Leer firmado (READ) con redirect
  * ========================= */
-app.get('/file/view', async (req, reply) => {
+app.get('/api/file/view', async (req, reply) => {
   const { key } = req.query || {}
   if (!key) return reply.code(400).send('key requerido')
   try {
@@ -134,7 +134,7 @@ app.get('/api/health', async () => ({ ok: true }))
 /* =========================
  * Inscripción → Sheets (UPDATE en próxima fila)
  * ========================= */
-app.post('/inscripcion', async (req, reply) => {
+app.post('/api/inscripcion', async (req, reply) => {
   try {
     const body = req.body || {}
     const archivos = body.archivos || {}
