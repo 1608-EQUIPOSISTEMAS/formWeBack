@@ -144,7 +144,7 @@ app.post('/api/inscripcion', async (req, reply) => {
     const spreadsheetId = GOOGLE_SHEET_ID
     const next = await getNextRow(sheets, spreadsheetId, SHEET_NAME)
     console.log(next)
-    const range = `${SHEET_NAME}!A${next}:AE${next}`
+    const range = `${SHEET_NAME}!A${next}:AG${next}`
     console.log(range)
     const timestamp = new Date().toISOString()
 
@@ -172,7 +172,9 @@ app.post('/api/inscripcion', async (req, reply) => {
       safe(body.gradoAcademico),
       safe(body.situacionActual),
       safe(body.areaActual),
+      safe(body.areaActualOtra),
       safe(body.areaDeseada),
+      safe(body.areaDeseadaOtra),
       safe(body.empresa),
       safe(body.puesto),
       safe(body.aniosExp),
